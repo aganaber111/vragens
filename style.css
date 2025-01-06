@@ -1,39 +1,22 @@
-/* Genel stil ayarları */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Normal modda arka plan rengi */
-    color: #333; /* Normal modda yazı rengi */
+    background-color: #f4f4f4; 
+    color: #333; 
     padding: 20px;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Geçiş efekti */
-    opacity: 0; /* Sayfa başlangıçta görünmez */
+    transition: background-color 0.5s, color 0.5s;
 }
 
-.fade-in {
-    animation: fadeIn 1s forwards; /* Fade in animasyonu */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Koyu mod */
 .dark-mode {
-    background-color: #222; /* Koyu modda arka plan rengi */
-    color: #f4f4f4; /* Koyu modda yazı rengi */
+    background-color: #222; 
+    color: #f4f4f4; 
 }
 
-/* Koyu modu açma/kapama butonu */
 .toggle-button {
-    position: absolute; /* Sağ üst köşeye konumlandırma */
+    position: absolute; 
     top: 20px;
     right: 20px;
-    background-color: #4CAF50; /* Yeşil arka plan */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -43,85 +26,85 @@ body {
 }
 
 .toggle-button:hover {
-    background-color: #45a049; /* Hover efekti */
+    background-color: #45a049; 
 }
 
-/* Butonlar */
-.button {
-    display: block;
-    background-color: #4CAF50; /* Normal modda yeşil arka plan */
-    color: white;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+.section {
+    margin-bottom: 30px; 
 }
 
-.button:hover {
-    background-color: #45a049; /* Hover efekti */
-    transform: scale(1.05);
+.selected {
+    background-color: #007BFF; /* Seçilen cevabın rengi */
+    color: white; 
 }
 
-/* Bounce animasyonu */
-.bounce {
-    animation: bounce 0.3s ease;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Soru alanı */
 .question {
-    background: white; /* Normal modda beyaz arka plan */
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 0;
+    background: white; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 10px 0; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .question {
-    background-color: #444; /* Koyu modda koyulaşma */
+    background-color: #444; 
+    color: #f4f4f4; 
 }
 
-/* Sonuç alanı */
-.result {
-    margin-top: 10px;
-    font-weight: bold;
+.button { 
+    display: block; 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 15px; 
+    margin: 5px 0; 
+    border: none; 
+    border-radius: 5px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+    font-size: 16px; 
 }
 
-.true-result {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
+.button:hover { 
+    background-color: #45a049; 
 }
 
-.false-result {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border: 1px solid #f5c6cb;
-    border-radius: 5px;
+.dark-mode .button { 
+    background-color: #666; 
+    color: #f4f4f4; 
 }
 
-/* Skor alanı */
+.dark-mode .button:hover { 
+    background-color: #555; 
+}
+
+.result { 
+    margin-top: 10px; 
+    font-weight: bold; 
+}
+
+.true-result { 
+    background-color: #d4edda; 
+    color: #155724; 
+    padding: 10px; 
+    border: 1px solid #c3e6cb; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+
+.false-result { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+    padding: 10px; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+
 .score {
     margin-top: 20px;
     font-weight: bold;
     padding: 10px;
-    background: #f0f0f0;
+    background: #f0f4f4;
     border-radius: 5px;
 }
