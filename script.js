@@ -4,8 +4,8 @@ const answers = {
     3: 'B'
 };
 
-let correctCount = 0; // Doğru cevap sayısı
-const questionCount = Object.keys(answers).length; // Toplam soru sayısı
+let correctCount = 0; // Aantal juiste antwoorden
+const questionCount = Object.keys(answers).length; // Totaal aantal vragen
 
 function getExplanation(questionNumber) {
     switch (questionNumber) {
@@ -20,24 +20,24 @@ function getExplanation(questionNumber) {
     }
 }
 
-// Cevabı kontrol et
+// Controleer het antwoord
 function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
     const resultDiv = document.getElementById(`result${questionNumber}`);
 
-    // Butonları devre dışı bırak
+    // Deactiveer de knoppen
     const buttons = clickedButton.parentElement.querySelectorAll('.button');
     buttons.forEach(button => {
-        button.disabled = true; // Butonları devre dışı bırak
-        button.classList.remove('selected'); // Seçim kaldır
+        button.disabled = true; // Deactiveer de knoppen
+        button.classList.remove('selected'); // Verwijder selectie
         if (button !== clickedButton) {
             button.classList.add('fade'); // Vervagen voor andere knoppen
         }
     });
 
-    // Seçilen butona 'selected' sınıfını ekle
+    // Voeg de 'selected' klasse toe aan de geselecteerde knop
     clickedButton.classList.add('selected');
 
-    // Cevabı kontrol et
+    // Controleer het antwoord
     const correctAnswer = answers[questionNumber];
 
     if (selectedAnswer === correctAnswer) {
@@ -47,17 +47,17 @@ function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
         resultDiv.innerHTML = `<div class="false-result">Fout! Het juiste antwoord is ${correctAnswer}. <br> Verklaring: ${getExplanation(questionNumber)}</div>`;
     }
 
-    // Skoru göster
+    // Toon de score
     displayScore();
 }
 
-// Skoru hesapla ve göster
+// Bereken en toon de score
 function displayScore() {
     const scoreDiv = document.getElementById('score');
     scoreDiv.innerHTML = `Je score is ${correctCount} van de ${questionCount} vragen.`;
 }
 
-// Koyu mod açma/kapama butonu
+// Knoop voor het in- en uitschakelen van de donkere modus
 document.getElementById('toggleButton').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
