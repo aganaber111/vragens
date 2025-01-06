@@ -24,6 +24,7 @@ function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
     const buttons = clickedButton.parentElement.querySelectorAll('.button');
     buttons.forEach(button => {
         button.disabled = true; // Butonları devre dışı bırak
+        button.classList.remove('selected'); // Seçim kaldır
     });
 
     // Seçilen butona 'selected' sınıfını ekle
