@@ -70,7 +70,7 @@ body {
 }
 
 .dark-mode .button.selected {
-    background-color: #555; /* Koyu tema için seçilen buton rengi */
+    background-color: #515151; /* Koyu tema için seçilen buton rengi */
 }
 
 .question {
