@@ -33,11 +33,6 @@ body {
     margin-bottom: 30px;
 }
 
-.selected {
-    background-color: #007BFF; /* Seçilen cevabın arka plan rengi */
-    color: white; /* Seçilen cevabın metin rengi */
-}
-
 .button {
     display: block; /* Butonları blok düzende yerleştir */
     background-color: #4CAF50;
@@ -48,16 +43,21 @@ body {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Voeg opacity toe voor vervaging */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Opaklık için geçiş */
     font-size: 16px;
 }
 
 .button.fade {
-    opacity: 0.5; /* Pas de doorzichtigheid aan */
+    opacity: 0.5; /* Diğer butonların opaklığı */
 }
 
 .button:hover {
     background-color: #45a049;
+}
+
+.selected {
+    background-color: #007BFF; /* Seçilen cevabın arka plan rengi */
+    color: white; /* Seçilen cevabın metin rengi */
 }
 
 .dark-mode .button {
@@ -67,6 +67,10 @@ body {
 
 .dark-mode .button:hover {
     background-color: #555;
+}
+
+.dark-mode .button.selected {
+    background-color: #007BFF; /* Koyu tema için seçilen buton rengi */
 }
 
 .question {
@@ -111,4 +115,9 @@ body {
     padding: 10px;
     background: #f0f4f4;
     border-radius: 5px;
+}
+
+.dark-mode .score {
+    background-color: #222;
+    color: #f4f4f4;
 }
