@@ -52,11 +52,11 @@ body {
 }
 
 .button { 
-    display: inline-block; 
+    display: block; /* Butonları blok düzende yerleştir */
     background-color: #4CAF50; 
     color: white; 
     padding: 10px 15px; 
-    margin: 5px 0; 
+    margin: 5px 0; /* Alt alta dizilmesi için marj */
     border: none; 
     border-radius: 5px; 
     text-align: center; 
