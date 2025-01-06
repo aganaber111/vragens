@@ -29,6 +29,9 @@ function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
     buttons.forEach(button => {
         button.disabled = true; // Butonları devre dışı bırak
         button.classList.remove('selected'); // Seçim kaldır
+        if (button !== clickedButton) {
+            button.classList.add('fade'); // Vervagen voor andere knoppen
+        }
     });
 
     // Seçilen butona 'selected' sınıfını ekle
