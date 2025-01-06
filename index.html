@@ -3,121 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veiligheid en Beveiliging Basis oefentoets</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4; 
-            color: #333; 
-            padding: 20px;
-            transition: background-color 0.5s, color 0.5s; 
-        }
-
-        .dark-mode {
-            background-color: #222; 
-            color: #f4f4f4; 
-        }
-
-        .toggle-button {
-            position: absolute; 
-            top: 20px;
-            right: 20px;
-            background-color: #4CAF50; 
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .toggle-button:hover {
-            background-color: #45a049; 
-        }
-
-        .section {
-            margin-bottom: 30px; 
-        }
-
-        .selected {
-            background-color: #007BFF; /* Seçilen cevabın rengi */
-            color: white; 
-        }
-
-        .question {
-            background: white; 
-            border-radius: 8px; 
-            padding: 20px; 
-            margin: 10px 0; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-        }
-
-        .dark-mode .question {
-            background-color: #444; 
-            color: #f4f4f4; 
-        }
-
-        .button { 
-            display: block; 
-            background-color: #4CAF50; 
-            color: white; 
-            padding: 10px 15px; 
-            margin: 5px 0; 
-            border: none; 
-            border-radius: 5px; 
-            text-align: center; 
-            cursor: pointer; 
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-            font-size: 16px; 
-        }
-
-        .button:hover { 
-            background-color: #45a049; 
-            transform: scale(1.05); 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-        }
-
-        .dark-mode .button { 
-            background-color: #666; 
-            color: #f4f4f4; 
-        }
-
-        .dark-mode .button:hover { 
-            background-color: #555; 
-        }
-
-        .result { 
-            margin-top: 10px; 
-            font-weight: bold; 
-        }
-
-        .true-result { 
-            background-color: #d4edda; 
-            color: #155724; 
-            padding: 10px; 
-            border: 1px solid #c3e6cb; 
-            border-radius: 5px; 
-            margin-bottom: 10px; 
-        }
-
-        .false-result { 
-            background-color: #f8d7da; 
-            color: #721c24; 
-            padding: 10px; 
-            border: 1px solid #f5c6cb; 
-            border-radius: 5px; 
-            margin-bottom: 10px; 
-        }
-
-        .score {
-            margin-top: 20px;
-            font-weight: bold;
-            padding: 10px;
-            background: #f0f4f4;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Veiligheid en Beveiliging Basis Oefentoets</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS Dosyası -->
 </head>
 <body>
 
@@ -143,7 +30,6 @@
         <button class="button" onclick="checkAnswer(2, 'D', this)">D) Het opstellen van een vluchtplan</button>
         <div id="result2" class="result"></div>
     </div>
-    <!-- Diğer sorular buraya eklenebilir -->
     <div class="question">
         <h3>50. Wat zijn de basisprincipes voor adequaat antwoord?</h3>
         <button class="button" onclick="checkAnswer(50, 'A', this)">A) Aantrekkelijkheid definieert goed gedrag</button>
@@ -157,67 +43,6 @@
 <!-- Resultaat sectie -->
 <div class="score" id="score"></div>
 
-<script>
-const answers = {
-    1: 'A',
-    2: 'A',
-    // 3. sorudan 49. soruya kadar devam edin
-    50: 'B'
-};
-
-let correctCount = 0; // Doğru cevap sayısı
-const questionCount = Object.keys(answers).length; // Toplam soru sayısı
-
-function getExplanation(questionNumber) {
-    switch (questionNumber) {
-        case 1: return "De juiste drie factoren voor verbranding zijn brandbare stof, zuurstof en ontbrandingstemperatuur.";
-        case 2: return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
-        // Diğer açıklamalar buraya eklenebilir
-        case 50: return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
-        default: return "Geen verklaring beschikbaar.";
-    }
-}
-
-// Cevabı kontrol et
-function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
-    const resultDiv = document.getElementById(`result${questionNumber}`);
-
-    // Butonları devre dışı bırak
-    const buttons = clickedButton.parentElement.querySelectorAll('.button');
-    buttons.forEach(button => {
-        button.disabled = true; // Butonları devre dışı bırak
-    });
-
-    // Seçilen butona 'selected' sınıfını ekle
-    clickedButton.classList.add('selected');
-
-    // Cevabı kontrol et
-    const correctAnswer = answers[questionNumber];
-
-    if (selectedAnswer === correctAnswer) {
-        resultDiv.innerHTML = `<div class="true-result">Correct! ${getExplanation(questionNumber)}</div>`;
-        correctCount++;
-    } else {
-        resultDiv.innerHTML = `<div class="false-result">Fout! Het juiste antwoord is ${correctAnswer}. <br> Verklaring: ${getExplanation(questionNumber)}</div>`;
-    }
-
-    // Skoru göster
-    displayScore();
-}
-
-// Skoru hesapla ve göster
-function displayScore() {
-    const scoreDiv = document.getElementById('score');
-    scoreDiv.innerHTML = `Je score is ${correctCount} van de ${questionCount} vragen.`;
-}
-
-// Koyu mod açma/kapama butonu
-const toggleButton = document.getElementById('toggleButton');
-const body = document.body;
-
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-});
-</script>
+<script src="script.js"></script> <!-- JavaScript Dosyası -->
 </body>
 </html>
