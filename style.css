@@ -56,7 +56,7 @@ body {
 }
 
 .selected {
-    background-color: #007BFF; /* Seçilen cevabın arka plan rengi */
+    background-color: #4CAF50; /* Seçilen cevabın arka plan rengi */
     color: white; /* Seçilen cevabın metin rengi */
 }
 
