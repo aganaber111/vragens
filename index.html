@@ -41,7 +41,7 @@
         }
 
         .selected {
-            background-color: #357a38; 
+            background-color: #007BFF; /* Seçilen cevabın rengi */
             color: white; 
         }
 
@@ -143,7 +143,7 @@
         <button class="button" onclick="checkAnswer(2, 'D', this)">D) Het opstellen van een vluchtplan</button>
         <div id="result2" class="result"></div>
     </div>
-    <!-- Diğer 48 soruyu buraya ekleyin -->
+    <!-- Diğer sorular buraya eklenebilir -->
     <div class="question">
         <h3>50. Wat zijn de basisprincipes voor adequaat antwoord?</h3>
         <button class="button" onclick="checkAnswer(50, 'A', this)">A) Aantrekkelijkheid definieert goed gedrag</button>
@@ -172,7 +172,7 @@ function getExplanation(questionNumber) {
     switch (questionNumber) {
         case 1: return "De juiste drie factoren voor verbranding zijn brandbare stof, zuurstof en ontbrandingstemperatuur.";
         case 2: return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
-        // Diğer açıklamaları buraya ekleyin
+        // Diğer açıklamalar buraya eklenebilir
         case 50: return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
         default: return "Geen verklaring beschikbaar.";
     }
@@ -203,13 +203,6 @@ function checkAnswer(questionNumber, selectedAnswer, clickedButton) {
 
     // Skoru göster
     displayScore();
-
-    // Butonları tekrar aktif hale getir
-    setTimeout(() => {
-        buttons.forEach(button => {
-            button.disabled = false; // Butonları yeniden etkinleştir
-        });
-    }, 3000); // 3 saniye sonra etkinleştir
 }
 
 // Skoru hesapla ve göster
