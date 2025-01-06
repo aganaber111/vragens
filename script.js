@@ -9,10 +9,14 @@ const questionCount = Object.keys(answers).length; // Toplam soru sayısı
 
 function getExplanation(questionNumber) {
     switch (questionNumber) {
-        case 1: return "De juiste drie factoren voor verbranding zijn brandbare stof, zuurstof en ontbrandingstemperatuur.";
-        case 2: return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
-        case 3: return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
-        default: return "Geen verklaring beschikbaar.";
+        case 1:
+            return "De juiste drie factoren voor verbranding zijn brandbare stof, zuurstof en ontbrandingstemperatuur.";
+        case 2:
+            return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
+        case 3:
+            return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
+        default:
+            return "Geen verklaring beschikbaar.";
     }
 }
 
