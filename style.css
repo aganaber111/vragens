@@ -38,19 +38,6 @@ body {
     color: white; /* Seçilen cevabın metin rengi */
 }
 
-.question {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .question {
-    background-color: #444;
-    color: #f4f4f4;
-}
-
 .button {
     display: block; /* Butonları blok düzende yerleştir */
     background-color: #4CAF50;
@@ -61,8 +48,12 @@ body {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Voeg opacity toe voor vervaging */
     font-size: 16px;
+}
+
+.button.fade {
+    opacity: 0.5; /* Pas de doorzichtigheid aan */
 }
 
 .button:hover {
@@ -76,6 +67,19 @@ body {
 
 .dark-mode .button:hover {
     background-color: #555;
+}
+
+.question {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .question {
+    background-color: #444;
+    color: #f4f4f4;
 }
 
 .result {
