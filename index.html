@@ -47,6 +47,18 @@
             margin-top: 20px;
             font-weight: bold;
         }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -60,22 +72,31 @@
 <div class="section" id="vragen">
     <!-- Sorular -->
     <div class="question">
-        <h3>1. Wat zijn de drie factoren die gelijktijdig aanwezig moeten zijn voor een verbrandingsproces?</h3>
+        <h3>1. Wat zijn de drie essentiële factoren die gelijktijdig aanwezig moeten zijn voor een verbrandingsproces?</h3>
         <button class="button" onclick="checkAnswer(1, 'A', this)">A) Brandbare stof, zuurstof, ontbrandingstemperatuur</button>
         <button class="button" onclick="checkAnswer(1, 'B', this)">B) Water, vuur, rook</button>
         <button class="button" onclick="checkAnswer(1, 'C', this)">C) Koolmonoxide, zuurstof, brandbare materialen</button>
         <button class="button" onclick="checkAnswer(1, 'D', this)">D) Een muur, een deur, een sleutel</button>
         <div id="result1" class="result"></div>
     </div>
-    <!-- Daha fazla soru ekleyin -->
-    <!-- 50. soruya kadar devam edin... -->
 
     <div class="question">
-        <h3>50. Wat voelt men als basisprincipes voor adequaat antwoord?</h3>
-        <button class="button" onclick="checkAnswer(50, 'A', this)">A) Aantrekkelijkheid definieert goed gedrag</button>
-        <button class="button" onclick="checkAnswer(50, 'B', this)">B) Er moeten nauwe communicatielijnen zijn</button>
-        <button class="button" onclick="checkAnswer(50, 'C', this)">C) Mensen zijn opgeslagen als slechts onbenut</button>
-        <button class="button" onclick="checkAnswer(50, 'D', this)">D) Het verloop van omleidingen is noodzakelijk</button>
+        <h3>2. Wat is de primaire verantwoordelijkheid van beveiligers in geval van een brand?</h3>
+        <button class="button" onclick="checkAnswer(2, 'A', this)">A) De brand te bestrijden</button>
+        <button class="button" onclick="checkAnswer(2, 'B', this)">B) Direct het personeel te evacueren om hun veiligheid te waarborgen</button>
+        <button class="button" onclick="checkAnswer(2, 'C', this)">C) De oorzaken van de brand te onderzoeken</button>
+        <button class="button" onclick="checkAnswer(2, 'D', this)">D) De brand te melden</button>
+        <div id="result2" class="result"></div>
+    </div>
+
+    <!-- Devam eden sorular... -->
+
+    <div class="question">
+        <h3>50. Wat is van groot belang voor een adequaat antwoord in geval van een noodsituatie?</h3>
+        <button class="button" onclick="checkAnswer(50, 'A', this)">A) Het hebben van voldoende informatie</button>
+        <button class="button" onclick="checkAnswer(50, 'B', this)">B) Nauwe communicatielijnen met alle betrokken partijen</button>
+        <button class="button" onclick="checkAnswer(50, 'C', this)">C) Een voldoende uitgeruste eerste hulpkit</button>
+        <button class="button" onclick="checkAnswer(50, 'D', this)">D) Een vertrouwensrelatie met alle personen</button>
         <div id="result50" class="result"></div>
     </div>
 </div>
@@ -85,7 +106,7 @@
 
 <script>
 const answers = {
-    1: 'A', 2: 'A', 3: 'B', /* 4. sorudan 50. soruya kadar devam edin */
+    1: 'A', 2: 'B', /* 3. sorudan 50. soruya kadar devam edin */
     50: 'B'
 };
 
@@ -110,12 +131,14 @@ function updateScore() {
 
 function getExplanation(questionNumber) {
     switch (questionNumber) {
-        case 1: return "De juiste drie factoren voor verbranding zijn brandbare stof, zuurstof en ontbrandingstemperatuur.";
-        case 2: return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
-        case 3: return "Manbeveiliging verwijst naar menselijke waakzaamheid, wat cruciaal is voor het tijdig detecteren van brand.";
-        // Devam eden açıklamalar...
-        case 50: return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
-        default: return "Geen verklaring beschikbaar.";
+        case 1:
+            return "Brandbare stof, zuurstof en ontbrandingstemperatuur zijn de essentiële factoren voor een verbrandingsproces.";
+        case 2:
+            return "De primaire verantwoordelijkheid van beveiligers is het direct evacueren van het personeel om hun veiligheid te waarborgen.";
+        case 50:
+            return "Nauwe communicatielijnen zijn essentieel voor een adequaat antwoord.";
+        default:
+            return "Geen verklaring beschikbaar.";
     }
 }
 
